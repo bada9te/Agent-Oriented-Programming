@@ -30,20 +30,20 @@ class NumberSenderAgent(Agent):
         async def run(self):
             numbers_to_send = [random.randint(1, 100) for _ in range(5)] 
             for num in numbers_to_send:
-                msg = Message(to="average_calculator@xmpp.jp")
+                msg = Message(to="studtelepov811@xmpp.jp")
                 msg.body = str(num)
                 await self.send(msg)
                 print(f"{self.agent.name} sent number: {num}")
-
-            await self.stop()
+            
+            self.kill()
 
     async def setup(self):
         self.add_behaviour(self.NumberSenderBehaviour()) 
 
 
 async def main():
-    average_calculator = AverageCalculatorAgent("average_calculator@xmpp.jp", "password")
-    number_sender = NumberSenderAgent("number_sender@xmpp.jp", "password")
+    average_calculator = AverageCalculatorAgent("studtelepov811@xmpp.jp", "04082004")
+    number_sender = NumberSenderAgent("studtelepov811_r@xmpp.jp", "04082004")
 
     # Запуск агентів
     await average_calculator.start()

@@ -33,7 +33,6 @@ class QueryAgent(Agent):
                 msg.body = "hello"
                 await self.send(msg)
 
-                asyncio.sleep(3);
                 msg.body = "bye"
                 await self.send(msg)
 
